@@ -1,17 +1,50 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Loading fonts */
 @font-face {
     font-family: "xkcd-script";
     src: url("../fonts/xkcd-script.ttf");
 }
-
 @font-face {
-    font-weight: "xkcd";
+    font-family: "xkcd";
     src: url("../fonts/xkcd-Regular.otf");
 }
 
+/* Global Defaults */
+* {
+    box-sizing: border-box;
+}
+
+/* Custom Element Styles */
 body {
     font-family: 'xkcd-script', Arial, Helvetica, sans-serif;
+}
+/* Responsive Design */
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background-color: #343a40;
+        color: #f8f9fa;
+    }
+    .navbar .navbar-brand, .navbar .nav-item .nav-link, #nav-link-home {
+        color: #f8f9fa;
+    }
+    #toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248, 249, 250, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    body {
+        background-color: #1b1d1f;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .navbar {
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
+    .navbar .navbar-brand, .navbar .nav-item .nav-link, #nav-link-home {
+        color: #343a40;
+    }
+    #toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(52, 58, 64, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
 }

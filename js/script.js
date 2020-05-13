@@ -115,7 +115,8 @@
   // Load the Home page
   document.querySelector("#nav-link-home").addEventListener("click", function(event) {
     showLoading("#main_content");
-    loadComic(xkcd_utils.latestXkcd);  
+    loadComic(xkcd_utils.latestXkcd); 
+    $("#bottomNav").show(); 
   });
 
 })(window);

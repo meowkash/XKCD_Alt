@@ -17,6 +17,53 @@
 body {
     font-family: 'xkcd-script', Arial, Helvetica, sans-serif;
 }
+
+#backBtn {
+    width: 60px;
+    height: 60px;
+    background: url("../assets/back_small.png") no-repeat;
+    background-size: 36px 36px;
+    background-position: center;
+    margin: 15px;
+}
+
+#bookmarkBtn {
+    width: 60px;
+    height: 60px;
+    background: url("../assets/bookmark_off_small.png") no-repeat;
+    background-size: 48px 48px;
+    background-position: center;
+    margin: 15px;
+}
+#bookmarkBtn:hover{
+    background: url("../assets/bookmark_small.png") no-repeat;
+    background-size: 48px 48px;
+    background-position: center;
+}
+
+#favBtn {
+    width: 60px;
+    height: 60px;
+    background: url("../assets/favorite_off_small.png") no-repeat;
+    background-size: 48px 48px;
+    background-position: center;
+    margin: 15px;
+}
+#favBtn:hover {
+    background: url("../assets/favoriteSmall.png") no-repeat;
+    background-size: 48px 48px;
+    background-position: center;
+}
+
+#forwdBtn {
+    width: 60px;
+    height: 60px;
+    background: url("../assets/next_small.png") no-repeat;
+    background-size: 36px 36px;
+    background-position: center;
+    margin: 15px;
+}
+
 /* Responsive Design */
 
 /* Dark Mode */
@@ -32,7 +79,51 @@ body {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248, 249, 250, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
     body {
-        background-color: #1b1d1f;
+        background-color: #000;
+    }
+    #backBtn {
+        width: 60px;
+        height: 60px;
+        background: url("../assets/back_small_dark.png") no-repeat;
+        background-size: 36px 36px;
+        background-position: center;
+        margin: 15px;
+    }
+    #bookmarkBtn {
+        width: 60px;
+        height: 60px;
+        background: url("../assets/bookmark_off_dark.png") no-repeat;
+        background-size: 48px 48px;
+        background-position: center;
+        margin: 15px;
+    }
+    #bookmarkBtn:hover{
+        background: url("../assets/bookmark_dark.png") no-repeat;
+        background-size: 48px 48px;
+        background-position: center;
+    }
+    
+    #favBtn {
+        width: 60px;
+        height: 60px;
+        background: url("../assets/favorite_off_small.png") no-repeat;
+        background-size: 48px 48px;
+        background-position: center;
+        margin: 15px;
+    }
+    #favBtn:hover {
+        background: url("../assets/favoriteSmall.png") no-repeat;
+        background-size: 48px 48px;
+        background-position: center;
+    }
+    
+    #forwdBtn {
+        width: 60px;
+        height: 60px;
+        background: url("../assets/next_dark.png") no-repeat;
+        background-size: 36px 36px;
+        background-position: center;
+        margin: 15px;
     }
 }
 

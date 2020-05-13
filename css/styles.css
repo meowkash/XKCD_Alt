@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "xkcd-script";
+    src: url("../fonts/xkcd-script.ttf");
+}
+
+@font-face {
+    font-weight: "xkcd";
+    src: url("../fonts/xkcd-Regular.otf");
+}
+
+body {
+    font-family: 'xkcd-script', Arial, Helvetica, sans-serif;
+}

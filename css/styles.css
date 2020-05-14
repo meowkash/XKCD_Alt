@@ -21,7 +21,8 @@ body {
 #backBtn {
     width: 60px;
     height: 60px;
-    background: url("../assets/back_small.png") no-repeat;
+    background: url("../assets/back_small.png");
+    background-repeat: no-repeat;
     background-size: 36px 36px;
     background-position: center;
     margin: 15px;
@@ -30,13 +31,17 @@ body {
 #bookmarkBtn {
     width: 60px;
     height: 60px;
-    background: url("../assets/bookmark_off_small.png") no-repeat;
+    background: url("../assets/bookmark_off_small.png");
+    background-repeat: no-repeat;
     background-size: 48px 48px;
     background-position: center;
     margin: 15px;
 }
 #bookmarkBtn:hover{
-    background: url("../assets/bookmark_small.png") no-repeat;
+    width: 60px;
+    height: 60px;
+    background: url("../assets/bookmark_small.png");
+    background-repeat: no-repeat;
     background-size: 48px 48px;
     background-position: center;
 }
@@ -44,23 +49,18 @@ body {
 #favBtn {
     width: 60px;
     height: 60px;
-    background: url("../assets/favorite_off_small.png") no-repeat;
+    background: url("../assets/favorite_off_small.png");
+    background-repeat: no-repeat;
     background-size: 48px 48px;
     background-position: center;
     margin: 15px;
-}
-#favBtn:hover {
-    width: 60px;
-    height: 60px;
-    background: url("../assets/favoriteSmall.png") no-repeat;
-    background-size: 48px 48px;
-    background-position: center;
 }
 
 #forwdBtn {
     width: 60px;
     height: 60px;
-    background: url("../assets/next_small.png") no-repeat;
+    background: url("../assets/next_small.png");
+    background-repeat: no-repeat;
     background-size: 36px 36px;
     background-position: center;
     margin: 15px;
@@ -100,7 +100,8 @@ body {
     #backBtn {
         width: 60px;
         height: 60px;
-        background: url("../assets/back_small_dark.png") no-repeat;
+        background: url("../assets/back_small_dark.png");
+        background-repeat: no-repeat;
         background-size: 36px 36px;
         background-position: center;
         margin: 15px;
@@ -108,13 +109,15 @@ body {
     #bookmarkBtn {
         width: 60px;
         height: 60px;
-        background: url("../assets/bookmark_off_dark.png") no-repeat;
+        background: url("../assets/bookmark_off_dark.png");
+        background-repeat: no-repeat;
         background-size: 48px 48px;
         background-position: center;
         margin: 15px;
     }
     #bookmarkBtn:hover{
-        background: url("../assets/bookmark_dark.png") no-repeat;
+        background: url("../assets/bookmark_dark.png");
+        background-repeat: no-repeat;
         background-size: 48px 48px;
         background-position: center;
     }
@@ -122,21 +125,18 @@ body {
     #favBtn {
         width: 60px;
         height: 60px;
-        background: url("../assets/favorite_off_small.png") no-repeat;
+        background: url("../assets/favorite_off_small.png");
+        background-repeat: no-repeat;
         background-size: 48px 48px;
         background-position: center;
         margin: 15px;
-    }
-    #favBtn:hover {
-        background: url("../assets/favoriteSmall.png") no-repeat;
-        background-size: 48px 48px;
-        background-position: center;
     }
     
     #forwdBtn {
         width: 60px;
         height: 60px;
-        background: url("../assets/next_dark.png") no-repeat;
+        background: url("../assets/next_dark.png");
+        background-repeat: no-repeat;
         background-size: 36px 36px;
         background-position: center;
         margin: 15px;

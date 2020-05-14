@@ -1,0 +1,20 @@
+{
+  "name": "XKCD : Alt",
+  "short_name": "XKCD : Alt",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A minimalist XKCD App",
+  "icons": [
+    {
+      "src": "assets/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

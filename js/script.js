@@ -85,8 +85,19 @@
   document.addEventListener("DOMContentLoaded", function() {
     // In the meantime show loading screen
     showLoading("#main_content");
-    loadComic(xkcd_utils.latestXkcd);    
+    loadComic(xkcd_utils.latestXkcd);
+    registerServiceWorker();    
   });
+
+  async function registerServiceWorker() {
+    if('serviceWorker' in navigator) {
+      try {
+        await navigator.serviceWorker.register('sw.js');
+      } catch (e) {
+        console.log("Unable to register Service Worker");
+      }
+    }
+  }
 
   // Handling the back button
   document.querySelector("#backBtn").addEventListener("click", function(event) {
@@ -161,5 +172,5 @@
   });
 
   // Add bookmark/un-bookmark ability -- Left for version 1.5
-  
+
 })(window);

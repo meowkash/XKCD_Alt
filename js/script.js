@@ -159,5 +159,7 @@
     // So that once you leave hover, it'll still retain its old state
     checkFavourite(xkcd_utils);
   });
+
   // Add bookmark/un-bookmark ability -- Left for version 1.5
+  
 })(window);

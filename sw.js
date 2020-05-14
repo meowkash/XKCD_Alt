@@ -1,14 +1,21 @@
 const cacheName = 'xkcd-alt';
 
 const staticAssets = [
-  'assets',
   'index.html',
   'css/styles.css',
   'js/script.js',
   'js/ajax_utils.js',
+  'js/xkcd_utils.js',
+  'js/page_utils.js',
   'snippets/about.html',
   'snippets/home.html',
-  'fonts/xkcd-script.ttf'
+  'fonts/xkcd-script.ttf',
+  'assets/back_small_dark.png',
+  'assets/back_small.png',
+  'assets/next_dark.png',
+  'assets/next_small.png',
+  'assets/favorite_off_small.png',
+  'assets/favoriteSmall.png'
 ];
 
 self.addEventListener('install', async e => {

@@ -50,14 +50,12 @@
   document.querySelector("#nav-link-home").addEventListener("click", function(event) {
     utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd); 
-    // Doesn't work with firefox
     $("#bottomNav").show();   
   });
 
   document.querySelector("#brand-link-home").addEventListener("click", function(event) {
     utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd); 
-    // Doesn't work with firefox
     $("#bottomNav").show();
   });
 

@@ -42,12 +42,12 @@
 
   function checkFavourite(self) {
     if(self.current_comic_number == self.favourite_comic) {
-      $("#favBtn").css({"background": "url('../assets/favoriteSmall.png') no-repeat", "width": "60px", 
+      $("#favBtn").css({"background": "url('/assets/favoriteSmall.png') no-repeat", "width": "60px", 
                        "height": "60px", "background-size": "48px 48px", "background-position": "center",
                        "margin": "15px"});
     }
     else {
-      $("#favBtn").css({"background": "url('../assets/favorite_off_small.png') no-repeat", "width": "60px", 
+      $("#favBtn").css({"background": "url('/assets/favorite_off_small.png') no-repeat", "width": "60px", 
                        "height": "60px", "background-size": "48px 48px", "background-position": "center",
                        "margin": "15px"});
     }

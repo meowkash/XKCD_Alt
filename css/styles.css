@@ -69,17 +69,31 @@ body {
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     .navbar {
-        background-color: #343a40;
+        background-color: #232323;
         color: #f8f9fa;
+    }
+    .lead, .small, .h3, .display-4 {
+        color: #f8f9fa;     
+        opacity: 75%;
+    }
+    .my-4 {
+        background-color: #6c757d;
     }
     .navbar .navbar-brand, .navbar .nav-item .nav-link, #nav-link-home {
         color: #f8f9fa;
+        opacity: 87%;
+    }
+    .navbar .navbar-brand:hover, .navbar .nav-item .nav-link:hover, #nav-link-home:hover {
+        color: #20c997;
     }
     #toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248, 249, 250, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
+    #toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(32, 201, 151, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
     body {
-        background-color: #000;
+        background-color: #121212;
     }
     #backBtn {
         width: 60px;
@@ -135,7 +149,13 @@ body {
     .navbar .navbar-brand, .navbar .nav-item .nav-link, #nav-link-home {
         color: #343a40;
     }
+    .navbar .navbar-brand:hover, .navbar .nav-item .nav-link:hover, #nav-link-home:hover  {
+        color: #28a745;
+    }
     #toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(52, 58, 64, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    #toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(40, 167, 69, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
 }

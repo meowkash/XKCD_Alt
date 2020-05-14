@@ -9,7 +9,8 @@
     base_url: 'https://xkcd.now.sh/?comic=',
     latestXkcd: 'https://xkcd.now.sh/?comic=latest',
     total_comics: 0,
-    current_comic_number: 0
+    current_comic_number: 0,
+    favourite_comic: -1
   };
 
   var insertHtml = function (selector, html) {
@@ -39,17 +40,33 @@
     insertHtml(selector, html);
   };
 
+  function checkFavourite(self) {
+    if(self.current_comic_number == self.favourite_comic) {
+      $("#favBtn").css({"background": "url('../assets/favoriteSmall.png') no-repeat", "width": "60px", 
+                       "height": "60px", "background-size": "48px 48px", "background-position": "center",
+                       "margin": "15px"});
+    }
+    else {
+      $("#favBtn").css({"background": "url('../assets/favorite_off_small.png') no-repeat", "width": "60px", 
+                       "height": "60px", "background-size": "48px 48px", "background-position": "center",
+                       "margin": "15px"});
+    }
+  }
+
   function loadComic(url) {
     // Asynchronously load the xkcd JSON
     ajaxUtils.sendGetRequest(url, function(xkcd_response) {
-      // Set the maximum number of comics as well
+      // Get and store the total number of comics in the first run
       if(run_number == 0) {
-        // For the first run only
         xkcd_utils.total_comics = xkcd_response.num;
         run_number += 1;
         $("#forwdBtn").disabled = true;
       }
       xkcd_utils.current_comic_number = xkcd_response.num;
+      
+      // If the comic is a favourite, show it so
+      checkFavourite(xkcd_utils);
+
       var comic_date = xkcd_response.day + " " + month_array[xkcd_response.month-1] + ", " + xkcd_response.year;
       var img_url = xkcd_response.img;
       var comic_title = xkcd_response.safe_title;
@@ -75,7 +92,7 @@
     loadComic(xkcd_utils.latestXkcd);    
   });
 
-  // Handling the back/forward buttons
+  // Handling the back button
   document.querySelector("#backBtn").addEventListener("click", function(event) {
     if(xkcd_utils.current_comic_number > 0) {
       xkcd_utils.current_comic_number = xkcd_utils.current_comic_number - 1;
@@ -86,9 +103,9 @@
     else {
       $("#backBtn").disabled = true;
     }
-    console.log(xkcd_utils);
   });
 
+  // Handling the forward button
   document.querySelector("#forwdBtn").addEventListener("click", function(event) {
     if(xkcd_utils.current_comic_number < xkcd_utils.total_comics) {
       xkcd_utils.current_comic_number += 1;
@@ -98,7 +115,6 @@
     else {
       $("#forwdBtn").disabled = true;
     }
-    console.log(xkcd_utils);
   });
 
   // Load the About page
@@ -116,7 +132,29 @@
   document.querySelector("#nav-link-home").addEventListener("click", function(event) {
     showLoading("#main_content");
     loadComic(xkcd_utils.latestXkcd); 
+    // Doesn't work with firefox
     $("#bottomNav").show(); 
   });
 
+  document.querySelector("#brand-link-home").addEventListener("click", function(event) {
+    showLoading("#main_content");
+    loadComic(xkcd_utils.latestXkcd); 
+    // Doesn't work with firefox
+    $("#bottomNav").show();
+  });
+
+  // Add favourite/unfavourite ability
+  document.querySelector("#favBtn").addEventListener("click", function(event) {
+    // Toggle the state and update it
+    if(xkcd_utils.favourite_comic!=xkcd_utils.current_comic_number) {
+      xkcd_utils.favourite_comic = xkcd_utils.current_comic_number;
+    }
+    else {
+      // Toggle it off
+      xkcd_utils.favourite_comic = -1;
+    }
+    checkFavourite(xkcd_utils);
+  });
+
+  // Add bookmark/un-bookmark ability -- Left for version 1.5
 })(window);

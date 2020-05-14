@@ -33,7 +33,7 @@
   <header>
     <nav class="navbar navbar-expand-md navbar-light">
       
-      <a class="navbar-brand" href="#" id="brand-link-home">XKCD</a>
+      <a class="navbar-brand" href="." id="brand-link-home">XKCD</a>
       
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" id="toggler-icon"></span>
@@ -42,21 +42,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="#" id="nav-link-home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="." id="nav-link-home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://blog.xkcd.com/" target="_blank">Blog</a>
+            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://blog.xkcd.com/" target="_blank">Blag</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://xkcd.com/about/" target="_blank">What Is?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="#" id="about_link">About Me</a>
+            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="about" id="about_link">About Me</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://xkcd.com/atom.xml">Feed</a>
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search Comics" aria-label="Search">
+        </form>
       </div>
     </nav>
   </header>    
@@ -87,6 +90,8 @@
   
   <!-- Custom Scripts -->
   <script src="js/ajax_utils.js"></script>
+  <script src="js/page_utils.js"></script>
+  <script src="js/xkcd_utils.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

@@ -153,9 +153,9 @@
   });
 
   $("#favBtn").hover(function() {
-    this.style.backgroundImage = "url('XKCD_Alt/assets/favoriteSmall.png')";
+    this.style.backgroundImage = "url('assets/favoriteSmall.png')";
   }, function() {
-    this.style.backgroundImage = "url('XKCD_Alt/assets/favorite_off_small.png')";
+    this.style.backgroundImage = "url('assets/favorite_off_small.png')";
   });
   // Add bookmark/un-bookmark ability -- Left for version 1.5
 })(window);

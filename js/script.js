@@ -42,10 +42,10 @@
 
   function checkFavourite(self) {
     if(self.current_comic_number == self.favourite_comic) {
-      document.getElementById("favBtn").style.backgroundImage = "url('../assets/favoriteSmall.png')";
+      document.getElementById("favBtn").style.backgroundImage = "url('XKCD_Alt/assets/favoriteSmall.png')";
     }
     else {
-      document.getElementById("favBtn").style.backgroundImage = "url('../assets/favorite_off_small.png')";
+      document.getElementById("favBtn").style.backgroundImage = "url('XKCD_Alt/assets/favorite_off_small.png')";
     }
   }
   
@@ -153,9 +153,9 @@
   });
 
   $("#favBtn").hover(function() {
-    this.style.backgroundImage = "url('assets/favoriteSmall.png')";
+    this.style.backgroundImage = "url('XKCD_Alt/assets/favoriteSmall.png')";
   }, function() {
-    this.style.backgroundImage = "url('assets/favorite_off_small.png')";
+    this.style.backgroundImage = "url('XKCD_Alt/assets/favorite_off_small.png')";
   });
   // Add bookmark/un-bookmark ability -- Left for version 1.5
 })(window);

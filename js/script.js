@@ -120,7 +120,7 @@
       main_div.innerHTML = about_response;
     },
     false);
-    // Hide the lower navbar
+    // Hide the navbars
     $("#bottomNav").hide();
   });
 
@@ -129,7 +129,7 @@
     showLoading("#main_content");
     loadComic(xkcd_utils.latestXkcd); 
     // Doesn't work with firefox
-    $("#bottomNav").show(); 
+    $("#bottomNav").show();   
   });
 
   document.querySelector("#brand-link-home").addEventListener("click", function(event) {

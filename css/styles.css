@@ -66,6 +66,11 @@ body {
     margin: 15px;
 }
 
+.border-0:focus {
+    border-radius: 0px;
+    outline: none;
+}
+
 /* Responsive Design */
 
 /* Dark Mode */

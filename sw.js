@@ -7,6 +7,7 @@ const staticAssets = [
   'js/ajax_utils.js',
   'js/xkcd_utils.js',
   'js/page_utils.js',
+  'js/gesture_utils.js',
   'snippets/about.html',
   'snippets/home.html',
   'fonts/xkcd-script.ttf',

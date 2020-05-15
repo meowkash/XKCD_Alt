@@ -12,27 +12,12 @@
 
   // Back Button Functionality
   document.querySelector("#backBtn").addEventListener("click", function(event) {
-    if(xkcd_utils.current_comic_number > 0) {
-      xkcd_utils.current_comic_number = xkcd_utils.current_comic_number - 1;
-      utils.showLoading("#main_content");
-      xkcd_utils.loadComic(xkcd_utils.base_url+xkcd_utils.current_comic_number); 
-      $("#forwdBtn").disabled = false;
-    }
-    else {
-      $("#backBtn").disabled = true;
-    }
+    xkcd_utils.goBackward();
   });
 
   // Forward button functionality
   document.querySelector("#forwdBtn").addEventListener("click", function(event) {
-    if(xkcd_utils.current_comic_number < xkcd_utils.total_comics) {
-      xkcd_utils.current_comic_number += 1;
-      utils.showLoading("#main_content");
-      xkcd_utils.loadComic(xkcd_utils.base_url+xkcd_utils.current_comic_number); 
-    }
-    else {
-      $("#forwdBtn").disabled = true;
-    }
+    xkcd_utils.goForward();
   });
 
   // Loading the About page
@@ -113,4 +98,7 @@
       return false;
     }
   });
+
+  document.getElementById("main_content").addEventListener('swr', xkcd_utils.goBackward, false);
+  document.getElementById("main_content").addEventListener('swl', xkcd_utils.goForward, false);
 })(window);

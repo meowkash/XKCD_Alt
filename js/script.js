@@ -95,6 +95,7 @@
     var num_to_search = parseInt(input_string, 10);
     if(num_to_search > 0 && num_to_search <= xkcd_utils.total_comics) {
       // Valid so load the comic
+      utils.showLoading('#main_content');
       xkcd_utils.loadComic(xkcd_utils.base_url + num_to_search);
     }
     else {

@@ -16,52 +16,62 @@
 /* Custom Element Styles */
 body {
     font-family: 'xkcd-script', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#main_content .jumbotron-fluid {
+    max-height: calc(var(--vh, 1vh) * 100 - 131px);
+    overflow: scroll;
+}
+
+.jumbotron-fluid::-webkit-scrollbar {
+    display: none;
 }
 
 #backBtn {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: url("../assets/back_small.png");
     background-repeat: no-repeat;
-    background-size: 36px 36px;
+    background-size: 30px 30px;
     background-position: center;
     margin: 15px;
 }
 
 #bookmarkBtn {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: url("../assets/bookmark_off_small.png");
     background-repeat: no-repeat;
-    background-size: 48px 48px;
+    background-size: 36px 36px;
     background-position: center;
     margin: 15px;
 }
 #bookmarkBtn:hover{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: url("../assets/bookmark_small.png");
     background-repeat: no-repeat;
-    background-size: 48px 48px;
+    background-size: 36px 36px;
     background-position: center;
 }
 
 #favBtn {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: url("../assets/favorite_off_small.png");
     background-repeat: no-repeat;
-    background-size: 48px 48px;
+    background-size: 36px 36px;
     background-position: center;
     margin: 15px;
 }
 
 #forwdBtn {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background: url("../assets/next_small.png");
     background-repeat: no-repeat;
-    background-size: 36px 36px;
+    background-size: 30px 30px;
     background-position: center;
     margin: 15px;
 }
@@ -70,6 +80,12 @@ body {
     border-radius: 0px;
     outline: none;
 }
+
+#bottomNav {
+    min-height: 75px;
+    position: absolute;
+}
+
 
 /* Responsive Design */
 
@@ -103,46 +119,46 @@ body {
         background-color: #121212;
     }
     #backBtn {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         background: url("../assets/back_small_dark.png");
         background-repeat: no-repeat;
-        background-size: 36px 36px;
+        background-size: 30px 30px;
         background-position: center;
         margin: 15px;
     }
     #bookmarkBtn {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         background: url("../assets/bookmark_off_dark.png");
         background-repeat: no-repeat;
-        background-size: 48px 48px;
+        background-size: 36px 36px;
         background-position: center;
         margin: 15px;
     }
     #bookmarkBtn:hover{
         background: url("../assets/bookmark_dark.png");
         background-repeat: no-repeat;
-        background-size: 48px 48px;
+        background-size: 36px 36px;
         background-position: center;
     }
     
     #favBtn {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         background: url("../assets/favorite_off_small.png");
         background-repeat: no-repeat;
-        background-size: 48px 48px;
+        background-size: 36px 36px;
         background-position: center;
         margin: 15px;
     }
     
     #forwdBtn {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         background: url("../assets/next_dark.png");
         background-repeat: no-repeat;
-        background-size: 36px 36px;
+        background-size: 30px 30px;
         background-position: center;
         margin: 15px;
     }

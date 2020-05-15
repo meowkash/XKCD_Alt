@@ -9,6 +9,21 @@
   <meta property="og:title" content="XKCD : Alt">
   <meta property="og:image" content="assets/banner.png">
 
+  <!-- Fix for mobile browser viewport -->
+  <script type="text/javascript">
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  </script>
+
   <!-- Add Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
@@ -57,9 +72,6 @@
             <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://xkcd.com/atom.xml">Feed</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search Comics" aria-label="Search">
-        </form>
       </div>
     </nav>
   </header>    
@@ -68,20 +80,24 @@
   <div class="container" id="main_content"></div> 
   
   <!-- Bottom controls -->
-  <ul class="nav justify-content-center" id="bottomNav">
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-secondary" id="backBtn" aria-label="back"></button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-secondary" id="bookmarkBtn" aria-label="bookmark"></button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-secondary" id="favBtn" aria-label="favorite"></button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-secondary" id="forwdBtn" aria-label="forward"></button>
-    </li>
-  </ul>
+  <nav class="navbar fixed-bottom navbar-light" id="bottomNav">
+    <div class="container">
+      <ul class="nav fixed-bottom justify-content-center">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary" id="backBtn" aria-label="back"></button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary" id="bookmarkBtn" aria-label="bookmark"></button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary" id="favBtn" aria-label="favorite"></button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary" id="forwdBtn" aria-label="forward"></button>
+        </li>
+      </ul>
+    </div>
+  </nav>
   
   <!-- Bootstrap Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

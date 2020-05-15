@@ -1,6 +1,6 @@
 (function(global) {
   var page_utils = {};
-  
+
   page_utils.registerServiceWorker = async function() {
     if('serviceWorker' in navigator) {
       try {

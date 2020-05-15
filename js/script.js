@@ -87,4 +87,22 @@
     utils.showLoading('#main_content');
     xkcd_utils.loadComic(xkcd_utils.base_url + comic_number);
   });
+
+  // Search Button setup
+  $('#searchFormButton').click(function() {
+    var input_string = document.getElementById("inputForm").value;
+    // Validate number
+    var num_to_search = parseInt(input_string, 10);
+    if(num_to_search > 0 && num_to_search <= xkcd_utils.total_comics) {
+      // Valid so load the comic
+      xkcd_utils.loadComic(xkcd_utils.base_url + num_to_search);
+    }
+    else {
+      alert("Input must be a number between 1 and " + xkcd_utils.total_comics);
+    }
+    // Clear the form
+    document.getElementById("inputForm").value = '';
+    // Hide the search bar
+    $('#navbarSearchContent').collapse("hide");
+  });
 })(window);

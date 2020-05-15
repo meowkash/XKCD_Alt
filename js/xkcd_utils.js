@@ -4,7 +4,7 @@
     latestXkcd: 'https://xkcd.now.sh/?comic=latest',
     total_comics: 0,
     current_comic_number: 0,
-    fav_comics: [-1]
+    fav_comic_number: [-1]
   };
 
   var month_array = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -14,24 +14,24 @@
   // Favourite Functionality
 
   // Load from cache, if available
-  var isStored = localStorage['fav_comics'];
+  var isStored = localStorage['fav_comic_number'];
   if(isStored) {
-    xkcd_utils.fav_comics = isStored;
+    xkcd_utils.fav_comic_number = isStored;
   }
 
   xkcd_utils.updateFavouriteCache = function() {
-    localStorage['fav_comics'] = this.fav_comics;
+    localStorage['fav_comic_number'] = this.fav_comic_number;
   }
 
   xkcd_utils.addFavourite = function(comic_num) {
-    this.fav_comics.push(comic_num);
+    this.fav_comic_number.push(comic_num);
     this.updateFavouriteCache();
   }
 
   xkcd_utils.removeFavourite = function(comic_num) {
-    for(var i=0; i<this.fav_comics.length; i++) {
-      if(this.fav_comics[i] === comic_num) {
-        this.fav_comics.splice(i, 1);
+    for(var i=0; i<this.fav_comic_number.length; i++) {
+      if(this.fav_comic_number[i] === comic_num) {
+        this.fav_comic_number.splice(i, 1);
         break;
       }
     }
@@ -39,7 +39,7 @@
   }
 
   xkcd_utils.isFavourite = function(comic_num) {
-    return this.fav_comics.includes(comic_num);
+    return this.fav_comic_number.includes(comic_num);
   }
 
   // Check if a comic is already a favourite or not and update icon accordingly
@@ -82,13 +82,14 @@
       var img_url = xkcd_response.img;
       var comic_title = xkcd_response.safe_title;
       var comic_alt = xkcd_response.alt;
+
       // Asynchronously load the HTML snippet
       ajaxUtils.sendGetRequest(home_path, function(html_response) {
         var main_div = document.querySelector("#main_content");
         main_div.innerHTML = html_response;
         main_div.querySelector("#comic_title").innerHTML = comic_title;
         main_div.querySelector("#comic_alt").innerHTML = comic_alt;
-        main_div.querySelector("#comic_date").innerHTML = comic_date;
+        main_div.querySelector("#comic_date_num").innerHTML = "Comic #" + xkcd_response.num + "...\t \t Published on " + comic_date;
         main_div.querySelector("#comic_img").src = img_url;
       },
       false);

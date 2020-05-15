@@ -78,6 +78,11 @@ body {
     position: absolute;
 }
 
+@media (min-width: 576px) {
+    .form-inline .input-group {
+        width: 100%;
+    }
+}
 
 /* Responsive Design */
 
@@ -107,6 +112,15 @@ body {
     #toggler-icon:hover {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(32, 201, 151, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
+    #search-toggler-icon {
+        background-image: url("https://img.icons8.com/ios/50/f8f9fa/search.png");
+        background-repeat: no-repeat;
+    }
+    #search-toggler-icon:hover {
+        background-image: url("https://img.icons8.com/ios/50/20c997/search.png");
+        background-repeat: no-repeat;
+    }
+    
     body {
         background-color: #000;
     }
@@ -166,5 +180,14 @@ body {
     }
     #toggler-icon:hover {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(40, 167, 69, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    #search-toggler-icon {
+        background-image: url("https://img.icons8.com/ios/50/343a40/search.png");
+        background-repeat: no-repeat;
+    }
+    
+    #search-toggler-icon:hover {
+        background-image: url("https://img.icons8.com/ios/50/28a745/search.png");
+        background-repeat: no-repeat;
     }
 }

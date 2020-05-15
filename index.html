@@ -50,6 +50,12 @@
       
       <a class="navbar-brand" href="." id="brand-link-home">XKCD</a>
       
+
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSearchContent" aria-controls="navbarSearchContent" aria-expanded="false" aria-label="Toggle search">
+        <span class="navbar-toggler-icon" id="search-toggler-icon"></span>
+      </button>
+
+
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" id="toggler-icon"></span>
       </button>
@@ -60,19 +66,25 @@
             <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="." id="nav-link-home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://blog.xkcd.com/" target="_blank" rel="noopener">Blag</a>
+            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="likes" id="favourites_link">Your Likes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://xkcd.com/about/" target="_blank" rel="noopener">What Is XKCD?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="about" id="about_link">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="https://xkcd.com/atom.xml">Feed</a>
+            <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" href="about" id="about_link">About</a>
           </li>
         </ul>
       </div>
+
+      <div class="collapse navbar-collapse navbar-right" id="navbarSearchContent">
+        <form class="form-inline">
+          <div class="input-group">
+            <input type="text" class="form-control" id="inputForm" placeholder="Enter Comic Number" aria-label="Enter Comic Number" aria-describedby="basic-addon1">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary" id="searchFormButton">Go!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </nav>
   </header>    
   

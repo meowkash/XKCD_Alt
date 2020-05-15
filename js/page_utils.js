@@ -1,6 +1,14 @@
 (function(global) {
   var page_utils = {};
 
+  $('#navbarSupportedContent').on('show.bs.collapse', function () {
+    $('#navbarSearchContent').collapse("hide");
+  });
+  $('#navbarSearchContent').on('show.bs.collapse', function () {
+    $('#navbarSupportedContent').collapse("hide");
+  });
+
+  
   page_utils.registerServiceWorker = async function() {
     if('serviceWorker' in navigator) {
       try {

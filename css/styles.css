@@ -38,22 +38,14 @@ body {
     margin: 15px;
 }
 
-#bookmarkBtn {
+#randomBtn {
     width: 45px;
     height: 45px;
-    background: url("../assets/bookmark_off_small.png");
+    background: url("../assets/r3_small.png");
     background-repeat: no-repeat;
     background-size: 36px 36px;
     background-position: center;
     margin: 15px;
-}
-#bookmarkBtn:hover{
-    width: 45px;
-    height: 45px;
-    background: url("../assets/bookmark_small.png");
-    background-repeat: no-repeat;
-    background-size: 36px 36px;
-    background-position: center;
 }
 
 #favBtn {
@@ -127,20 +119,14 @@ body {
         background-position: center;
         margin: 15px;
     }
-    #bookmarkBtn {
+    #randomBtn {
         width: 45px;
         height: 45px;
-        background: url("../assets/bookmark_off_dark.png");
+        background: url("../assets/r3_small.png");
         background-repeat: no-repeat;
         background-size: 36px 36px;
         background-position: center;
         margin: 15px;
-    }
-    #bookmarkBtn:hover{
-        background: url("../assets/bookmark_dark.png");
-        background-repeat: no-repeat;
-        background-size: 36px 36px;
-        background-position: center;
     }
     
     #favBtn {

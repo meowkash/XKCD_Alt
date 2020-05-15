@@ -69,7 +69,7 @@
       xkcd_utils.addFavourite(comic_Check);
     }
     // Update the icon
-    xkcd_utils.checkFavourite();
+    xkcd_utils.updateFavouriteIcon();
   });
 
   // Favourite Button cosmetic effects
@@ -81,4 +81,9 @@
     }
   });
 
+  // Random Button effects
+  $("#randomBtn").click(function() {
+    var comic_number = Math.ceil(Math.random() * xkcd_utils.total_comics);
+    xkcd_utils.loadComic(xkcd_utils.base_url + comic_number);
+  });
 })(window);

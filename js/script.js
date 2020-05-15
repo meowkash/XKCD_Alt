@@ -61,14 +61,14 @@
 
   // Add favourite/unfavourite ability
   document.querySelector("#favBtn").addEventListener("click", function(event) {
-    // Toggle the state and update it
-    if(xkcd_utils.favourite_comic!=xkcd_utils.current_comic_number) {
-      xkcd_utils.favourite_comic = xkcd_utils.current_comic_number;
+    var comic_Check = xkcd_utils.current_comic_number;
+    if(xkcd_utils.isFavourite(comic_Check)) {
+      xkcd_utils.removeFavourite(comic_Check);
     }
     else {
-      // Toggle it off
-      xkcd_utils.favourite_comic = -1;
+      xkcd_utils.addFavourite(comic_Check);
     }
+    // Update the icon
     xkcd_utils.checkFavourite();
   });
 
@@ -76,9 +76,9 @@
   $("#favBtn").hover(function() {
     this.style.backgroundImage = "url('assets/favoriteSmall.png')";
   }, function() {
-    this.style.backgroundImage = "url('assets/favorite_off_small.png')";
-    // So that once you leave hover, it'll still retain its old state
-    xkcd_utils.checkFavourite();
+    if(!xkcd_utils.isFavourite(xkcd_utils.current_comic_number)) {
+      this.style.backgroundImage = "url('assets/favorite_off_small.png')";
+    }
   });
 
 })(window);

@@ -4,23 +4,52 @@
     latestXkcd: 'https://xkcd.now.sh/?comic=latest',
     total_comics: 0,
     current_comic_number: 0,
-    favourite_comic: -1
+    fav_comics: [-1]
   };
 
   var month_array = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var run_number = 0;
   var home_path = "snippets/home.html";
 
-  // Check if a comic is already a favourite or not
-  xkcd_utils.checkFavourite = function() {
-    if(xkcd_utils.current_comic_number == xkcd_utils.favourite_comic) {
-      document.getElementById("favBtn").style.backgroundImage = "url('assets/favoriteSmall.png')";
+  // Load from cache, if available
+  var isStored = localStorage['fav_comics'];
+  if(isStored) {
+    xkcd_utils.fav_comics = isStored;
+  }
+
+  xkcd_utils.updateFavouriteCache = function() {
+    localStorage['fav_comics'] = this.fav_comics;
+  }
+
+  xkcd_utils.addFavourite = function(comic_num) {
+    this.fav_comics.push(comic_num);
+    this.updateFavouriteCache();
+  }
+
+  xkcd_utils.removeFavourite = function(comic_num) {
+    for(var i=0; i<this.fav_comics.length; i++) {
+      if(this.fav_comics[i] === comic_num) {
+        this.fav_comics.splice(i, 1);
+        break;
+      }
     }
+    this.updateFavouriteCache();
+  }
+
+  xkcd_utils.isFavourite = function(comic_num) {
+    return this.fav_comics.includes(comic_num);
+  }
+
+  // Check if a comic is already a favourite or not and update icon accordingly
+  xkcd_utils.checkFavourite = function() {
+    if(this.isFavourite(xkcd_utils.current_comic_number)) {
+      document.getElementById("favBtn").style.backgroundImage = "url('assets/favoriteSmall.png')";
+    } 
     else {
       document.getElementById("favBtn").style.backgroundImage = "url('assets/favorite_off_small.png')";
     }
   }
-  
+
   xkcd_utils.loadComic = function(url) {
     // Asynchronously load the xkcd JSON
     ajaxUtils.sendGetRequest(url, function(xkcd_response) {
@@ -52,8 +81,6 @@
     },
     true);
   }
-
-
 
   global.xkcd_utils = xkcd_utils;
 })(window);

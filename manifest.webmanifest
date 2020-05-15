@@ -4,6 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
+  "theme_color": "#f8f9fa",
   "description": "A minimalist XKCD App",
   "icons": [
     {

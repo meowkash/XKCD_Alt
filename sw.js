@@ -15,7 +15,13 @@ const staticAssets = [
   'assets/next_dark.png',
   'assets/next_small.png',
   'assets/favorite_off_small.png',
-  'assets/favoriteSmall.png'
+  'assets/favoriteSmall.png',
+  'assets/r1_small.png',
+  'assets/r2_small.png',
+  'assets/r3_small.png',
+  'assets/r4_small.png',
+  'assets/r5_small.png',
+  'assets/r6_small.png'
 ];
 
 self.addEventListener('install', async e => {

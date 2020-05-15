@@ -105,4 +105,11 @@
     // Hide the search bar
     $('#navbarSearchContent').collapse("hide");
   });
+
+  $("#inputForm").keypress(function(e) {
+    //Enter key
+    if (e.which == 13) {
+      return false;
+    }
+  });
 })(window);

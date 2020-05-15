@@ -84,6 +84,7 @@
   // Random Button effects
   $("#randomBtn").click(function() {
     var comic_number = Math.ceil(Math.random() * xkcd_utils.total_comics);
+    utils.showLoading('#main_content');
     xkcd_utils.loadComic(xkcd_utils.base_url + comic_number);
   });
 })(window);

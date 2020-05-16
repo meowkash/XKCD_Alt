@@ -25,8 +25,9 @@
     inner_img.alt = data.comic_alt;
     inner_img.onclick = function() {
       xkcd_utils.loadComic(data.comic_url);
+      $("#bottomNav").show();  
     }
-    
+
     var inner_caption = document.createElement('figcaption');
     inner_caption.classList.add('figure-caption');
     inner_caption.innerHTML = "#" + data.comic_number + " : " + data.comic_title;

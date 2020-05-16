@@ -31,6 +31,12 @@
     $("#bottomNav").hide();
   });
 
+  // Loading the Likes page
+  document.querySelector('#favourites_link').addEventListener("click", function(event) {
+    likes_utils.loadLikesView();
+    $("#bottomNav").hide();
+  });
+
   // Loading the Home page
   document.querySelector("#nav-link-home").addEventListener("click", function(event) {
     utils.showLoading("#main_content");

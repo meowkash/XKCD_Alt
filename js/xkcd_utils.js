@@ -9,14 +9,17 @@
     current_comic_alt: " ",
     current_comic_img: " ",
     fav_comic_number: [],
-    like_util_arr: []
+    comic_date: [],
+    comic_title: [],
+    comic_alt: [],
+    comic_img: []
   };
 
 
   var month_array = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var run_number = 0;
   var home_path = "snippets/home.html";
-
+  
   // Load from cache, if available
   var isStored = localStorage['fav_comic_number'];
   if(isStored) {
@@ -24,19 +27,19 @@
   }
 
   xkcd_utils.updateFavouriteCache = function() {
-    localStorage['fav_comic_number'] = this.fav_comic_number;
-    localStorage['favourite_metadata'] = this.like_util_arr;
+    localStorage['fav_comic_number'] = JSON.stringify(this.fav_comic_number);
+    localStorage['fav_comic_title'] = JSON.stringify(this.comic_title);
+    localStorage['fav_comic_date'] = JSON.stringify(this.comic_date);
+    localStorage['fav_comic_alt'] = JSON.stringify(this.comic_alt);
+    localStorage['fav_comic_img'] = JSON.stringify(this.comic_img);
   }
 
   xkcd_utils.addFavourite = function() {
     this.fav_comic_number.push(this.current_comic_number);
-    this.like_util_arr.push(JSON.stringify({
-      comic_number: this.current_comic_number,
-      comic_date:this.current_comic_date,
-      comic_title:this.current_comic_title,
-      comic_alt:this.current_comic_alt, 
-      comic_img:this.current_comic_img 
-    }));
+    this.comic_date.push(this.current_comic_date);
+    this.comic_title.push(this.current_comic_title);
+    this.comic_alt.push(this.current_comic_alt); 
+    this.comic_img.push(this.current_comic_img); 
     this.updateFavouriteCache();
   }
 
@@ -44,7 +47,10 @@
     for(var i=0; i<this.fav_comic_number.length; i++) {
       if(this.fav_comic_number[i] === this.current_comic_number) {
         this.fav_comic_number.splice(i, 1);
-        this.like_util_arr.splice(i, 1);
+        this.comic_title.splice(i, 1);
+        this.comic_date.splice(i, 1);
+        this.comic_alt.splice(i, 1);
+        this.comic_img.splice(i, 1);
         break;
       }
     }

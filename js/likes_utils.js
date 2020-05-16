@@ -23,7 +23,10 @@
     inner_img.classList.add('figure-img', 'img-fluid', 'rounded');
     inner_img.src = data.comic_img;
     inner_img.alt = data.comic_alt;
-
+    inner_img.onclick = function() {
+      xkcd_utils.loadComic(data.comic_url);
+    }
+    
     var inner_caption = document.createElement('figcaption');
     inner_caption.classList.add('figure-caption');
     inner_caption.innerHTML = "#" + data.comic_number + " : " + data.comic_title;
@@ -45,12 +48,12 @@
   }
 
   function imagesToLoad() {
-    inner_jumbo.innerHTML = "";
+    row.innerHTML = "";
     var isStored = localStorage['fav_comic_number'];
     if(isStored) {
       var numStored = JSON.parse(isStored);
       var titleStored = JSON.parse(localStorage['fav_comic_title']);
-      var dateStored = JSON.parse(localStorage['fav_comic_date']);
+      var urlStored = JSON.parse(localStorage['fav_comic_url']);
       var altStored = JSON.parse(localStorage['fav_comic_alt']);
       var imgStored = JSON.parse(localStorage['fav_comic_img']);
       
@@ -60,7 +63,7 @@
           comic_title: titleStored[index],
           comic_alt: altStored[index],
           comic_img: imgStored[index],
-          comic_date: dateStored[index]
+          comic_url: urlStored[index]
         };
         createImageElement(toLoad);
       });

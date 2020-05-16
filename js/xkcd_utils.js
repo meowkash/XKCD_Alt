@@ -8,8 +8,9 @@
     current_comic_title: " ",
     current_comic_alt: " ",
     current_comic_img: " ",
+    current_comic_url: " ",
     fav_comic_number: [],
-    comic_date: [],
+    comic_url: [],
     comic_title: [],
     comic_alt: [],
     comic_img: []
@@ -29,14 +30,14 @@
   xkcd_utils.updateFavouriteCache = function() {
     localStorage['fav_comic_number'] = JSON.stringify(this.fav_comic_number);
     localStorage['fav_comic_title'] = JSON.stringify(this.comic_title);
-    localStorage['fav_comic_date'] = JSON.stringify(this.comic_date);
+    localStorage['fav_comic_url'] = JSON.stringify(this.comic_url);
     localStorage['fav_comic_alt'] = JSON.stringify(this.comic_alt);
     localStorage['fav_comic_img'] = JSON.stringify(this.comic_img);
   }
 
   xkcd_utils.addFavourite = function() {
     this.fav_comic_number.push(this.current_comic_number);
-    this.comic_date.push(this.current_comic_date);
+    this.comic_url.push(this.current_comic_url);
     this.comic_title.push(this.current_comic_title);
     this.comic_alt.push(this.current_comic_alt); 
     this.comic_img.push(this.current_comic_img); 
@@ -48,7 +49,7 @@
       if(this.fav_comic_number[i] === this.current_comic_number) {
         this.fav_comic_number.splice(i, 1);
         this.comic_title.splice(i, 1);
-        this.comic_date.splice(i, 1);
+        this.comic_url.splice(i, 1);
         this.comic_alt.splice(i, 1);
         this.comic_img.splice(i, 1);
         break;
@@ -83,6 +84,7 @@
   }
 
   xkcd_utils.loadComic = function(url) {
+    utils.showLoading("#main_content");
     // Asynchronously load the xkcd JSON
     ajaxUtils.sendGetRequest(url, function(xkcd_response) {
       // Get and store the total number of comics in the first run
@@ -107,7 +109,7 @@
       xkcd_utils.current_comic_alt = comic_alt;
       xkcd_utils.current_comic_img = img_url;
       xkcd_utils.current_comic_date = comic_date;
-
+      xkcd_utils.current_comic_url = url;
       // Asynchronously load the HTML snippet
       ajaxUtils.sendGetRequest(home_path, function(html_response) {
         var main_div = document.querySelector("#main_content");

@@ -5,7 +5,7 @@
   // For the initial landing experience
   document.addEventListener("DOMContentLoaded", function() {
     // In the meantime show loading screen
-    utils.showLoading("#main_content");
+    // utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd);
     utils.registerServiceWorker();    
   });
@@ -39,13 +39,12 @@
 
   // Loading the Home page
   document.querySelector("#nav-link-home").addEventListener("click", function(event) {
-    utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd); 
     $("#bottomNav").show();   
   });
 
   document.querySelector("#brand-link-home").addEventListener("click", function(event) {
-    utils.showLoading("#main_content");
+    // utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd); 
     $("#bottomNav").show();
   });
@@ -75,7 +74,7 @@
   // Random Button effects
   $("#randomBtn").click(function() {
     var comic_number = Math.ceil(Math.random() * xkcd_utils.total_comics);
-    utils.showLoading('#main_content');
+    // utils.showLoading('#main_content');
     xkcd_utils.loadComic(xkcd_utils.base_url + comic_number);
   });
 
@@ -86,7 +85,7 @@
     var num_to_search = parseInt(input_string, 10);
     if(num_to_search > 0 && num_to_search <= xkcd_utils.total_comics) {
       // Valid so load the comic
-      utils.showLoading('#main_content');
+      // utils.showLoading('#main_content');
       xkcd_utils.loadComic(xkcd_utils.base_url + num_to_search);
     }
     else {

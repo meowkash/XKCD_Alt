@@ -4,9 +4,11 @@
   var main_content = document.getElementById('main_content');
   var inner_jumbo = document.createElement('div');
   inner_jumbo.classList.add('jumbotron-fluid');
+  var row = document.createElement('div');
+  row.classList.add('row');
 
   function addElementtoPage(elem) {
-    inner_jumbo.appendChild(elem);
+    row.appendChild(elem);
   }
 
   function createImageElement(data) {
@@ -26,8 +28,9 @@
     inner_caption.classList.add('figure-caption');
     inner_caption.innerHTML = "#" + data.comic_number + " : " + data.comic_title;
 
-    inner_fig.appendChild(inner_img);
     inner_fig.appendChild(inner_caption);
+    inner_fig.appendChild(inner_img);
+    
 
     thumbnail.appendChild(inner_fig);
    
@@ -71,6 +74,7 @@
     // Hide Main Page, then load comics
     main_content.innerHTML = "";
     imagesToLoad();
+    inner_jumbo.appendChild(row);
     main_content.appendChild(inner_jumbo);
     // Now clear inner_jumbo for future use
   }

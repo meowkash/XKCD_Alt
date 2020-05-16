@@ -92,7 +92,7 @@ body {
         background-color: #232323;
         color: #f8f9fa;
     }
-    .lead, .small, .h3, .display-4 {
+    .lead, .small, .h3, .display-4, .figure-caption {
         color: #f8f9fa;     
         opacity: 75%;
     }

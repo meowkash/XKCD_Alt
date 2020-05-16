@@ -1,5 +1,11 @@
 (function(global) {
-  var page_utils = {};
+  var page_utils = {
+    comic_number: [],
+    comic_title: [],
+    comic_date: [],
+    comic_alt: [],
+    comic_img: []
+  };
 
   $('#navbarSupportedContent').on('show.bs.collapse', function () {
     $('#navbarSearchContent').collapse("hide");
@@ -8,7 +14,7 @@
     $('#navbarSupportedContent').collapse("hide");
   });
 
-  
+
   page_utils.registerServiceWorker = async function() {
     if('serviceWorker' in navigator) {
       try {
@@ -44,5 +50,6 @@
     }
     this.insertHtml(selector, html);
   };
+  
   global.utils = page_utils;
 })(window);

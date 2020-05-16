@@ -48,10 +48,10 @@
   document.querySelector("#favBtn").addEventListener("click", function(event) {
     var comic_Check = xkcd_utils.current_comic_number;
     if(xkcd_utils.isFavourite(comic_Check)) {
-      xkcd_utils.removeFavourite(comic_Check);
+      xkcd_utils.removeFavourite();
     }
     else {
-      xkcd_utils.addFavourite(comic_Check);
+      xkcd_utils.addFavourite();
     }
     // Update the icon
     xkcd_utils.updateFavouriteIcon();

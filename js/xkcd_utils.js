@@ -4,14 +4,18 @@
     latestXkcd: 'https://xkcd.now.sh/?comic=latest',
     total_comics: 0,
     current_comic_number: 0,
-    fav_comic_number: [-1]
+    current_comic_date: " ",
+    current_comic_title: " ",
+    current_comic_alt: " ",
+    current_comic_img: " ",
+    fav_comic_number: [],
+    like_util_arr: []
   };
+
 
   var month_array = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var run_number = 0;
   var home_path = "snippets/home.html";
-
-  // Favourite Functionality
 
   // Load from cache, if available
   var isStored = localStorage['fav_comic_number'];
@@ -21,17 +25,26 @@
 
   xkcd_utils.updateFavouriteCache = function() {
     localStorage['fav_comic_number'] = this.fav_comic_number;
+    localStorage['favourite_metadata'] = this.like_util_arr;
   }
 
-  xkcd_utils.addFavourite = function(comic_num) {
-    this.fav_comic_number.push(comic_num);
+  xkcd_utils.addFavourite = function() {
+    this.fav_comic_number.push(this.current_comic_number);
+    this.like_util_arr.push(JSON.stringify({
+      comic_number: this.current_comic_number,
+      comic_date:this.current_comic_date,
+      comic_title:this.current_comic_title,
+      comic_alt:this.current_comic_alt, 
+      comic_img:this.current_comic_img 
+    }));
     this.updateFavouriteCache();
   }
 
-  xkcd_utils.removeFavourite = function(comic_num) {
+  xkcd_utils.removeFavourite = function() {
     for(var i=0; i<this.fav_comic_number.length; i++) {
-      if(this.fav_comic_number[i] === comic_num) {
+      if(this.fav_comic_number[i] === this.current_comic_number) {
         this.fav_comic_number.splice(i, 1);
+        this.like_util_arr.splice(i, 1);
         break;
       }
     }
@@ -43,7 +56,7 @@
   }
 
   // Check if a comic is already a favourite or not and update icon accordingly
-  xkcd_utils.updateFavouriteIcon = function() {
+  xkcd_utils.updateFavouriteIcon = function(response) {
     if(this.isFavourite(xkcd_utils.current_comic_number)) {
       document.getElementById("favBtn").style.backgroundImage = "url('assets/favoriteSmall.png')";
     } 
@@ -75,13 +88,19 @@
       xkcd_utils.current_comic_number = xkcd_response.num;
       
       // If the comic is a favourite, show it so
-      xkcd_utils.updateFavouriteIcon();
+      xkcd_utils.updateFavouriteIcon(xkcd_response);
       xkcd_utils.setRandomIcon();
 
       var comic_date = xkcd_response.day + " " + month_array[xkcd_response.month-1] + ", " + xkcd_response.year;
       var img_url = xkcd_response.img;
       var comic_title = xkcd_response.safe_title;
       var comic_alt = xkcd_response.alt;
+
+      // Store for easy favourite functionality
+      xkcd_utils.current_comic_title = comic_title;
+      xkcd_utils.current_comic_alt = comic_alt;
+      xkcd_utils.current_comic_img = img_url;
+      xkcd_utils.current_comic_date = comic_date;
 
       // Asynchronously load the HTML snippet
       ajaxUtils.sendGetRequest(home_path, function(html_response) {
@@ -119,5 +138,10 @@
       $("#backBtn").disabled = true;
     }
   }
+
+  /* Add functionality for favourites : store/load from localStorage 
+  * The following data is to be cached : Image_urls, Date, Title, Number and Alt
+  */
+  
   global.xkcd_utils = xkcd_utils;
 })(window);

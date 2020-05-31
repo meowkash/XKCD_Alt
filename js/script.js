@@ -44,7 +44,6 @@
   });
 
   document.querySelector("#brand-link-home").addEventListener("click", function(event) {
-    // utils.showLoading("#main_content");
     xkcd_utils.loadComic(xkcd_utils.latestXkcd); 
     $("#bottomNav").show();
   });

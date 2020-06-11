@@ -22,20 +22,27 @@
   var home_path = "snippets/home.html";
   
   // Load from cache, if available
-  var isStored = localStorage['fav_comic_number'];
-  if(isStored) {
-    xkcd_utils.fav_comic_number = isStored;
+  xkcd_utils.loadFromCache = function() {
+    var isStored = localStorage.getItem('fav_comic_number');
+    if(isStored) {
+      xkcd_utils.fav_comic_number = JSON.parse(isStored);
+      xkcd_utils.comic_url = JSON.parse(localStorage.getItem('fav_comic_url'));
+      xkcd_utils.comic_title = JSON.parse(localStorage.getItem('fav_comic_title'));
+      xkcd_utils.comic_alt = JSON.parse(localStorage.getItem('fav_comic_alt'));
+      xkcd_utils.comic_img = JSON.parse(localStorage.getItem('fav_comic_img'));
+    }
   }
 
   xkcd_utils.updateFavouriteCache = function() {
-    localStorage['fav_comic_number'] = JSON.stringify(this.fav_comic_number);
-    localStorage['fav_comic_title'] = JSON.stringify(this.comic_title);
-    localStorage['fav_comic_url'] = JSON.stringify(this.comic_url);
-    localStorage['fav_comic_alt'] = JSON.stringify(this.comic_alt);
-    localStorage['fav_comic_img'] = JSON.stringify(this.comic_img);
+    localStorage.setItem('fav_comic_number', JSON.stringify(this.fav_comic_number));
+    localStorage.setItem('fav_comic_title', JSON.stringify(this.comic_title));
+    localStorage.setItem('fav_comic_url', JSON.stringify(this.comic_url));
+    localStorage.setItem('fav_comic_alt', JSON.stringify(this.comic_alt));
+    localStorage.setItem('fav_comic_img', JSON.stringify(this.comic_img));
   }
 
   xkcd_utils.addFavourite = function() {
+    this.loadFromCache();
     this.fav_comic_number.push(this.current_comic_number);
     this.comic_url.push(this.current_comic_url);
     this.comic_title.push(this.current_comic_title);
@@ -45,6 +52,7 @@
   }
 
   xkcd_utils.removeFavourite = function() {
+    this.loadFromCache();
     for(var i=0; i<this.fav_comic_number.length; i++) {
       if(this.fav_comic_number[i] === this.current_comic_number) {
         this.fav_comic_number.splice(i, 1);
@@ -64,6 +72,7 @@
 
   // Check if a comic is already a favourite or not and update icon accordingly
   xkcd_utils.updateFavouriteIcon = function(response) {
+    this.loadFromCache();
     if(this.isFavourite(xkcd_utils.current_comic_number)) {
       document.getElementById("favBtn").style.backgroundImage = "url('assets/favoriteSmall.png')";
     } 

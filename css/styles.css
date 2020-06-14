@@ -68,6 +68,26 @@ body {
     margin: 15px;
 }
 
+#shareBtn {
+    width: 45px;
+    height: 45px;
+    background-image: url("https://img.icons8.com/ios-glyphs/50/343a40/share-rounded.png");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    margin: 15px;
+}
+#shareBtn:hover {
+    width: 45px;
+    height: 45px;
+    background: url("https://img.icons8.com/ios-glyphs/50/28a745/share-rounded.png");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    margin: 15px;
+    
+}
+
 .border-0:focus {
     border-radius: 0px;
     outline: none;
@@ -119,6 +139,24 @@ body {
     #search-toggler-icon:hover {
         background-image: url("https://img.icons8.com/ios/50/20c997/search.png");
         background-repeat: no-repeat;
+    }
+    #shareBtn {
+        width: 45px;
+        height: 45px;
+        background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png");
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-position: center;
+        margin: 15px;
+    }
+    #shareBtn:hover {
+        width: 45px;
+        height: 45px;
+        background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png");
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-position: center;
+        margin: 15px;
     }
     
     body {

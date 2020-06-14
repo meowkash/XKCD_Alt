@@ -20,6 +20,11 @@
     xkcd_utils.goForward();
   });
 
+  // Share button functionality
+  document.querySelector("#shareBtn").addEventListener("click", function(event) {
+    xkcd_utils.shareComic();
+  });
+
   // Loading the About page
   document.querySelector("#about_link").addEventListener("click", function(event) {
     ajaxUtils.sendGetRequest(about_path, function(about_response) {

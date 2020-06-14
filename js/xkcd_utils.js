@@ -145,6 +145,15 @@
     }
   }
 
+  xkcd_utils.shareComic = function() {
+    shareData = {
+      title: this.current_comic_title,
+      text: this.current_comic_alt,
+      url: 'https://xkcd.com/' + this.current_comic_number
+    };
+    navigator.share(shareData);
+  }
+
   xkcd_utils.goBackward = function() {
     if(xkcd_utils.current_comic_number > 1) {
       xkcd_utils.current_comic_number = xkcd_utils.current_comic_number - 1;

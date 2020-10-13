@@ -7,7 +7,7 @@
   inner_jumbo.classList.add('overflow-auto');
   inner_jumbo.style.textAlign = 'center';
   inner_jumbo.style.overflow = 'hidden';
-  inner_jumbo.setAttribute("style", "scrollbar-width: none;");
+  inner_jumbo.setAttribute("style", "scrollbar-width: none; max-height: calc(var(--vh, 1vh) * 100 - 50px);");
   var row = document.createElement('div');
   row.classList.add('row');
 

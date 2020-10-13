@@ -20,7 +20,7 @@ body {
 }
 
 #main_content .jumbotron-fluid {
-    max-height: calc(var(--vh, 1vh) * 100 - 50px);
+    max-height: calc(var(--vh, 1vh) * 100 - 131px);
     overflow: scroll;
     padding-left: 15px;
     padding-top: 15px;
@@ -37,9 +37,20 @@ body {
     height: 45px;
     background: url("../assets/back_small.png");
     background-repeat: no-repeat;
-    background-size: 30px 30px;
+    background-size: 22px 22px;
     background-position: center;
     margin: 15px;
+    border-radius: 23px;
+}
+#backBtn:hover {
+    width: 45px;
+    height: 45px;
+    background: url("../assets/back_small_colour.png");
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    margin: 15px;
+    border-radius: 23px;
 }
 
 #randomBtn {
@@ -47,9 +58,20 @@ body {
     height: 45px;
     background: url("../assets/r3_small.png");
     background-repeat: no-repeat;
-    background-size: 36px 36px;
+    background-size: 32px 32px;
     background-position: center;
     margin: 15px;
+    border-radius: 23px;
+}
+#randomBtn:hover {
+    width: 45px;
+    height: 45px;
+    background: url("../assets/r3_small.png");
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position: center;
+    margin: 15px;
+    border-radius: 23px;
 }
 
 #favBtn {
@@ -57,9 +79,10 @@ body {
     height: 45px;
     background: url("../assets/favorite_off_small.png");
     background-repeat: no-repeat;
-    background-size: 36px 36px;
+    background-size: 32px 32px;
     background-position: center;
     margin: 15px;
+    border-radius: 23px;
 }
 
 #forwdBtn {
@@ -67,9 +90,20 @@ body {
     height: 45px;
     background: url("../assets/next_small.png");
     background-repeat: no-repeat;
-    background-size: 30px 30px;
+    background-size: 22px 22px;
     background-position: center;
     margin: 15px;
+    border-radius: 23px;
+}
+#forwdBtn:hover {
+    width: 45px;
+    height: 45px;
+    background: url("../assets/next_small_colour.png");
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    margin: 15px;
+    border-radius: 23px;
 }
 
 #shareBtn {
@@ -77,19 +111,20 @@ body {
     height: 45px;
     background-image: url("https://img.icons8.com/ios-glyphs/50/343a40/share-rounded.png");
     background-repeat: no-repeat;
-    background-size: 30px 30px;
+    background-size: 25px 25px;
     background-position: center;
     margin: 15px;
+    border-radius: 23px;
 }
 #shareBtn:hover {
     width: 45px;
     height: 45px;
     background: url("https://img.icons8.com/ios-glyphs/50/28a745/share-rounded.png");
     background-repeat: no-repeat;
-    background-size: 30px 30px;
+    background-size: 25px 25px;
     background-position: center;
     margin: 15px;
-    
+    border-radius: 23px;
 }
 
 .border-0:focus {
@@ -149,7 +184,7 @@ body {
         height: 45px;
         background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png");
         background-repeat: no-repeat;
-        background-size: 30px 30px;
+        background-size: 25px 25px;
         background-position: center;
         margin: 15px;
     }
@@ -158,7 +193,7 @@ body {
         height: 45px;
         background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png");
         background-repeat: no-repeat;
-        background-size: 30px 30px;
+        background-size: 25px 25px;
         background-position: center;
         margin: 15px;
     }
@@ -171,16 +206,17 @@ body {
         height: 45px;
         background: url("../assets/back_small_dark.png");
         background-repeat: no-repeat;
-        background-size: 30px 30px;
+        background-size: 22px 22px;
         background-position: center;
         margin: 15px;
     }
+
     #randomBtn {
         width: 45px;
         height: 45px;
         background: url("../assets/r3_small.png");
         background-repeat: no-repeat;
-        background-size: 36px 36px;
+        background-size: 32px 32px;
         background-position: center;
         margin: 15px;
     }
@@ -190,7 +226,7 @@ body {
         height: 45px;
         background: url("../assets/favorite_off_small.png");
         background-repeat: no-repeat;
-        background-size: 36px 36px;
+        background-size: 32px 32px;
         background-position: center;
         margin: 15px;
     }
@@ -200,7 +236,7 @@ body {
         height: 45px;
         background: url("../assets/next_dark.png");
         background-repeat: no-repeat;
-        background-size: 30px 30px;
+        background-size: 22px 22px;
         background-position: center;
         margin: 15px;
     }

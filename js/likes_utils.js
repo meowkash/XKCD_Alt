@@ -4,6 +4,10 @@
   var main_content = document.getElementById('main_content');
   var inner_jumbo = document.createElement('div');
   inner_jumbo.classList.add('jumbotron-fluid');
+  inner_jumbo.classList.add('overflow-auto');
+  inner_jumbo.style.textAlign = 'center';
+  inner_jumbo.style.overflow = 'hidden';
+  inner_jumbo.setAttribute("style", "scrollbar-width: none;");
   var row = document.createElement('div');
   row.classList.add('row');
 

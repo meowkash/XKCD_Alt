@@ -20,8 +20,12 @@ body {
 }
 
 #main_content .jumbotron-fluid {
-    max-height: calc(var(--vh, 1vh) * 100 - 131px);
+    max-height: calc(var(--vh, 1vh) * 100 - 50px);
     overflow: scroll;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    overflow: hidden;
 }
 
 .jumbotron-fluid::-webkit-scrollbar {

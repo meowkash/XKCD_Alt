@@ -22,7 +22,7 @@
 
   // Share button functionality
   document.querySelector("#shareBtn").addEventListener("click", function(event) {
-    xkcd_utils.shareComic();
+    xkcd_utils.downloadComic();
   });
 
   // Loading the About page

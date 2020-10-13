@@ -109,7 +109,8 @@ body {
 #shareBtn {
     width: 45px;
     height: 45px;
-    background-image: url("https://img.icons8.com/ios-glyphs/50/343a40/share-rounded.png");
+    /* background-image: url("https://img.icons8.com/ios-glyphs/50/343a40/share-rounded.png"); */
+    background: url("../assets/download_btn.png");
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: center;
@@ -119,7 +120,8 @@ body {
 #shareBtn:hover {
     width: 45px;
     height: 45px;
-    background: url("https://img.icons8.com/ios-glyphs/50/28a745/share-rounded.png");
+    /* background: url("https://img.icons8.com/ios-glyphs/50/28a745/share-rounded.png"); */
+    background: url("../assets/download_btn_colour.png");
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: center;
@@ -182,7 +184,8 @@ body {
     #shareBtn {
         width: 45px;
         height: 45px;
-        background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png");
+        /* background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png"); */
+        background: url("../assets/download_btn_dark.png");
         background-repeat: no-repeat;
         background-size: 25px 25px;
         background-position: center;
@@ -191,7 +194,8 @@ body {
     #shareBtn:hover {
         width: 45px;
         height: 45px;
-        background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png");
+        /* background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png"); */
+        background: url("../assets/download_btn_colour.png")
         background-repeat: no-repeat;
         background-size: 25px 25px;
         background-position: center;

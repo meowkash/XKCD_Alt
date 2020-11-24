@@ -8,7 +8,8 @@
             return false
         },
         nm = true,
-        minDelta = 90,
+        minDelta_x = 90,
+        minDelta_y = 20,
         sp = {
             x: 0,
             y: 0
@@ -39,8 +40,16 @@
                         xr = Math.abs(x),
                         y = ep.y - sp.y,
                         yr = Math.abs(y);
-                    if ((xr ** 2 + yr ** 2) > minDelta ** 2) {
-                        ce(e, (xr > yr ? (x < 0 ? 'swl' : 'swr') : (y < 0 ? 'swu' : 'swd')))
+                    if (yr > xr) {
+                        // Scroll Event
+                        if ((xr ** 2 + yr ** 2) > minDelta_y ** 2) {
+                            ce(e, ((y < 0 ? 'swu' : 'swd')))
+                        }
+                    } else {
+                        // Horizontal Swipe
+                        if ((xr ** 2 + yr ** 2) > minDelta_x ** 2) {
+                            ce(e, ((x < 0 ? 'swl' : 'swr')))
+                        }
                     }
                 };
                 nm = true

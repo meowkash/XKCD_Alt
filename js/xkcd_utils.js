@@ -16,6 +16,7 @@
     comic_img: []
   };
 
+  var isExplainMode = false;
 
   var month_array = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var run_number = 0;
@@ -154,13 +155,63 @@
     navigator.share(shareData);
   }
 
-  xkcd_utils.downloadComic = function () {
-    var anchor = document.createElement('a');
-    anchor.href = this.current_comic_img;
-    anchor.target = '_blank';
-    anchor.download = "XKCD " + this.current_comic_number + " : " + this.current_comic_title;
-    anchor.click();
-    anchor.remove();
+  xkcd_utils.explainComic = function () {
+    // Using the Explain:XKCD Wiki Page
+    var url = 'https://cors-anywhere.herokuapp.com/https://www.explainxkcd.com/wiki/index.php/' + this.current_comic_number;
+
+    if (isExplainMode) {
+      // If already in explain mode, remove the explain popover
+      var overlay = document.getElementById('overlay');
+      $('#overlay').removeClass('fade-in');
+      $('#overlay').addClass('fade-out');
+      // document.body.removeChild(overlay);
+      isExplainMode = false;
+    } else {
+      // Create the overlay 
+      var overlay = document.getElementById("overlay");
+      $('#overlay').removeClass('fade-out');
+      $('#overlay').addClass('fade-in');
+
+      isExplainMode = true;
+
+      ajaxUtils.sendGetRequest(url, function (response) {
+        var startIndex = response.indexOf('<h2><span class="mw-headline" id="Explanation">Explanation</span>');
+        var endIndex = response.indexOf('<h2><span class="mw-headline" id="Transcript">Transcript</span>')
+        var explanation = response.substring(startIndex, endIndex);
+        // There are two types of explanations : Complete and Incomplete. For the first, the explanation is in a p block while for the other there is a warning box
+
+        // Search for incomplete explanation 
+        var isIncomplete = response.indexOf('This explanation may be incomplete or incorrect');
+
+        var cleanedText = "";
+        if (isIncomplete > 0) {
+          // Incomplete Explanation
+          var exclIndex = explanation.indexOf('</table>')
+          var finIndex = explanation.lastIndexOf('</p>');
+          cleanedText = cleanedText + explanation.substring(exclIndex + 8, finIndex);
+
+          var somediv = document.createElement("div");
+          somediv.innerHTML = cleanedText;
+          cleanedText = somediv.textContent || somediv.innerText || "";
+
+        } else {
+          // Complete Explanation 
+          var startIndex = explanation.indexOf('<p>');
+          while (startIndex > 0) {
+            var endIndex = explanation.indexOf('</p>', startIndex);
+            cleanedText = cleanedText + explanation.substring(startIndex + 3, endIndex);
+            startIndex = explanation.indexOf('<p>', endIndex);
+          }
+
+          var somediv = document.createElement("div");
+          somediv.innerHTML = cleanedText;
+          cleanedText = somediv.textContent || somediv.innerText || "";
+        }
+
+        $('#expln_text').text(cleanedText);
+      },
+        false);
+    }
   }
 
   xkcd_utils.goBackward = function () {
@@ -176,9 +227,12 @@
     }
   }
 
-  /* Add functionality for favourites : store/load from localStorage 
-  * The following data is to be cached : Image_urls, Date, Title, Number and Alt
-  */
+
+  $("#closeExplnBtn").on('click', function () {
+    $('#overlay').removeClass('fade-in');
+    $('#overlay').addClass('fade-out');
+    isExplainMode = false;
+  });
 
   global.xkcd_utils = xkcd_utils;
 })(window);

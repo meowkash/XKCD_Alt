@@ -25,7 +25,7 @@ body {
     padding-left: 15px;
     padding-top: 15px;
     padding-right: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .jumbotron-fluid::-webkit-scrollbar {
@@ -39,7 +39,10 @@ body {
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 #backBtn:hover {
@@ -49,7 +52,10 @@ body {
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 
@@ -60,7 +66,10 @@ body {
     background-repeat: no-repeat;
     background-size: 32px 32px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 #randomBtn:hover {
@@ -70,7 +79,10 @@ body {
     background-repeat: no-repeat;
     background-size: 32px 32px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 
@@ -81,7 +93,10 @@ body {
     background-repeat: no-repeat;
     background-size: 32px 32px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 
@@ -92,7 +107,10 @@ body {
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 #forwdBtn:hover {
@@ -102,30 +120,39 @@ body {
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 
-#shareBtn {
+#explainBtn {
     width: 45px;
     height: 45px;
-    /* background-image: url("https://img.icons8.com/ios-glyphs/50/343a40/share-rounded.png"); */
-    background: url("../assets/download_btn.png");
+    background-image: url("https://img.icons8.com/pastel-glyph/64/121212/info--v1.png");
+    /* background: url("../assets/download_btn.png"); */
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
-#shareBtn:hover {
+#explainBtn:hover {
     width: 45px;
     height: 45px;
-    /* background: url("https://img.icons8.com/ios-glyphs/50/28a745/share-rounded.png"); */
-    background: url("../assets/download_btn_colour.png");
+    background-image: url("https://img.icons8.com/pastel-glyph/64/28a745/info--v1.png");
+    /* background: url("../assets/download_btn_colour.png"); */
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: center;
-    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;;
     border-radius: 23px;
 }
 
@@ -135,8 +162,84 @@ body {
 }
 
 #bottomNav {
-    min-height: 75px;
+    min-height: 65px;
     position: absolute;
+    width: 90%;
+    left: 5%;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    z-index: 2;
+}
+
+#bottomNavList {
+    width: 90%;
+    left: 5%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    visibility: hidden; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+    z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay::before {
+    filter: blur(10px);
+}
+
+#expln_container {
+    width: 90%;
+    height: 70%;
+    position: relative;
+    top: 10%;
+    left: 5%;
+    border-bottom-left-radius: 25px;
+    border-radius: 25px;
+}
+
+#expln_text {
+    /* margin: 10px; */
+    padding-top: 55px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    height: 100%;
+    padding-bottom: 10px;
+    overflow: scroll;
+    border-radius: 25px;
+}
+
+#expln_heading {
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    left: 5%;
+    right: 5%;
+    margin: 0;
+}
+
+#closeExplnBtn {
+    position: absolute;
+    bottom: 5%;
+    left: 35%;
+    width: 30vw;
+    height: 10vw;
+    border-radius: 25px;
 }
 
 @media (min-width: 576px) {
@@ -160,6 +263,20 @@ body {
     .my-4 {
         background-color: #6c757d;
     }
+    #expln_heading {
+        background-color: #20672d;
+        color: #f8f9fa;
+    }
+    #expln_container {
+        background-color: #232323;
+        color: #f8f9fa;
+    }
+    #closeExplnBtn {
+        border-color: #c06002;
+        border-width: 0.5px;
+        background-color: #b21919;
+        color: #f8f9fa;
+    }
     .navbar .navbar-brand, .navbar .nav-item .nav-link, #nav-link-home {
         color: #f8f9fa;
         opacity: 87%;
@@ -181,25 +298,31 @@ body {
         background-image: url("https://img.icons8.com/ios/50/20c997/search.png");
         background-repeat: no-repeat;
     }
-    #shareBtn {
+    #explainBtn {
         width: 45px;
         height: 45px;
-        /* background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png"); */
-        background: url("../assets/download_btn_dark.png");
+        background-image: url("https://img.icons8.com/pastel-glyph/64/f8f9fa/info--v1.png");
+        /* background: url("../assets/download_btn_dark.png"); */
         background-repeat: no-repeat;
         background-size: 25px 25px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;;
     }
-    #shareBtn:hover {
+    #explainBtn:hover {
         width: 45px;
         height: 45px;
-        /* background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png"); */
-        background: url("../assets/download_btn_colour.png")
+        background-image: url("https://img.icons8.com/pastel-glyph/64/20c997/info--v1.png");
+        /* background: url("../assets/download_btn_colour.png"); */
         background-repeat: no-repeat;
         background-size: 25px 25px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;;
     }
     
     body {
@@ -212,7 +335,10 @@ body {
         background-repeat: no-repeat;
         background-size: 22px 22px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;;
     }
 
     #randomBtn {
@@ -222,7 +348,10 @@ body {
         background-repeat: no-repeat;
         background-size: 32px 32px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;;
     }
     
     #favBtn {
@@ -232,7 +361,10 @@ body {
         background-repeat: no-repeat;
         background-size: 32px 32px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        margin-right: 15px;;
     }
     
     #forwdBtn {
@@ -242,7 +374,10 @@ body {
         background-repeat: no-repeat;
         background-size: 22px 22px;
         background-position: center;
-        margin: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;;
     }
 }
 
@@ -256,6 +391,20 @@ body {
     }
     .navbar .navbar-brand:hover, .navbar .nav-item .nav-link:hover, #nav-link-home:hover  {
         color: #28a745;
+    }
+    #expln_heading {
+        background-color: #7bb661;
+        color: #f8f9fa;
+    }
+    #expln_container {
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
+    #closeExplnBtn {
+        border-color: #f8f9fa;
+        border-width: 0.5px;
+        background-color: #ff3a3a;
+        color: #f8f9fa;
     }
     #toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(52, 58, 64, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
@@ -272,4 +421,16 @@ body {
         background-image: url("https://img.icons8.com/ios/50/28a745/search.png");
         background-repeat: no-repeat;
     }
+}
+
+.fade-in {
+    visibility: visible !important;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+  
+.fade-out {
+    visibility: hidden !important;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
 }

@@ -45,6 +45,13 @@
 </head>
 <body>
   <!-- Navigation Bar -->
+  <div id="overlay" style="display: block;">
+    <div id="expln_container" style="display: block;">
+      <p id="expln_heading">Explanation</p>
+      <p id="expln_text"></p>
+    </div>
+    <button id="closeExplnBtn">Close</button>
+  </div> 
   <header>
     <nav class="navbar navbar-expand-md navbar-light">
       
@@ -93,7 +100,7 @@
   <!-- Bottom controls -->
   <nav class="navbar fixed-bottom navbar-light" id="bottomNav">
     <div class="container">
-      <ul class="nav fixed-bottom justify-content-center">
+      <ul class="nav fixed-bottom justify-content-center" id="bottomNavList">
         <li class="nav-item">
           <button type="button" class="btn btn-outline-secondary" id="backBtn" aria-label="back"></button>
         </li>
@@ -101,7 +108,7 @@
           <button type="button" class="btn btn-outline-secondary" id="randomBtn" aria-label="random"></button>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-outline-secondary" id="shareBtn" aria-label="share"></button>
+          <button type="button" class="btn btn-outline-secondary" id="explainBtn" aria-label="share"></button>
         </li>
         <li class="nav-item">
           <button type="button" class="btn btn-outline-secondary" id="favBtn" aria-label="favorite"></button>

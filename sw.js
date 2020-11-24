@@ -22,7 +22,9 @@ const staticAssets = [
   'assets/r3_small.png',
   'assets/r4_small.png',
   'assets/r5_small.png',
-  'assets/r6_small.png'
+  'assets/r6_small.png',
+  'assets/download_btn_dark.png',
+  'assets/download_btn_colour.png'
 ];
 
 self.addEventListener('install', async e => {

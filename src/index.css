@@ -1,0 +1,26 @@
+/* Loading fonts */
+
+@font-face {
+    font-family: "xkcd-script";
+    src: url("./fonts/xkcd-script.ttf");
+}
+
+@font-face {
+    font-family: "xkcd";
+    src: url("./fonts/xkcd.otf");
+}
+
+body {
+    margin: 0;
+    font-family: 'xkcd-script', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+  

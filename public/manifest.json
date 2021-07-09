@@ -1,0 +1,21 @@
+{
+    "name": "xkcd_alt",
+    "short_name": "xkcd_alt",
+    "description": "A minimalist XKCD App",
+    "display": "standalone",
+    "start_url": ".",
+    "icons": [
+      {
+        "src": "icon_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}

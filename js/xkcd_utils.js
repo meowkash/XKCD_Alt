@@ -155,6 +155,15 @@
     navigator.share(shareData);
   }
 
+  xkcd_utils.downloadComic = function () {
+    var anchor = document.createElement('a');
+    anchor.href = this.current_comic_img;
+    anchor.target = '_blank';
+    anchor.download = "XKCD " + this.current_comic_number + " : " + this.current_comic_title;
+    anchor.click();
+    anchor.remove();
+  }
+
   xkcd_utils.explainComic = function () {
     // Using the Explain:XKCD Wiki Page
     var url = 'https://cors-anywhere.herokuapp.com/https://www.explainxkcd.com/wiki/index.php/' + this.current_comic_number;

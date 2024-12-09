@@ -21,8 +21,12 @@
   });
 
   // Explain: XKCD in a nice format
-  document.querySelector("#explainBtn").addEventListener("click", function (event) {
-    xkcd_utils.explainComic();
+  // document.querySelector("#explainBtn").addEventListener("click", function (event) {
+  //   xkcd_utils.explainComic();
+  // });
+
+  document.querySelector("#shareBtn").addEventListener("click", function(event) {
+    xkcd_utils.downloadComic();
   });
 
   // Loading the About page

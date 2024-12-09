@@ -141,10 +141,12 @@ body {
     border-radius: 23px;
 }
 
-#explainBtn {
+/* #explainBtn { */
+#shareBtn {
     width: 45px;
     height: 45px;
-    background-image: url("https://img.icons8.com/pastel-glyph/64/121212/info--v1.png");
+    /* background-image: url("https://img.icons8.com/pastel-glyph/64/121212/info--v1.png"); */
+    background: url("https://img.icons8.com/ios-glyphs/50/121212/share-rounded.png");
     /* background: url("../assets/download_btn.png"); */
     background-repeat: no-repeat;
     background-size: 25px 25px;
@@ -153,14 +155,15 @@ body {
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    ;
     border-radius: 23px;
 }
 
-#explainBtn:hover {
+/* #explainBtn:hover { */
+#shareBtn:hover {
     width: 45px;
     height: 45px;
-    background-image: url("https://img.icons8.com/pastel-glyph/64/28a745/info--v1.png");
+    background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png"); 
+    /* background-image: url("https://img.icons8.com/pastel-glyph/64/28a745/info--v1.png"); */
     /* background: url("../assets/download_btn_colour.png"); */
     background-repeat: no-repeat;
     background-size: 25px 25px;
@@ -169,7 +172,6 @@ body {
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    ;
     border-radius: 23px;
 }
 
@@ -347,10 +349,12 @@ body {
         background-image: url("https://img.icons8.com/ios/50/20c997/search.png");
         background-repeat: no-repeat;
     }
-    #explainBtn {
+    /* #explainBtn { */
+    #shareBtn {
         width: 45px;
         height: 45px;
-        background-image: url("https://img.icons8.com/pastel-glyph/64/f8f9fa/info--v1.png");
+        /* background-image: url("https://img.icons8.com/pastel-glyph/64/f8f9fa/info--v1.png"); */
+        background: url("https://img.icons8.com/ios-glyphs/50/f8f9fa/share-rounded.png");
         /* background: url("../assets/download_btn_dark.png"); */
         background-repeat: no-repeat;
         background-size: 25px 25px;
@@ -361,10 +365,12 @@ body {
         margin-right: 10px;
         ;
     }
-    #explainBtn:hover {
+    /* #explainBtn:hover { */
+    #shareBtn:hover {
         width: 45px;
         height: 45px;
-        background-image: url("https://img.icons8.com/pastel-glyph/64/20c997/info--v1.png");
+        /* background-image: url("https://img.icons8.com/pastel-glyph/64/20c997/info--v1.png"); */
+        background: url("https://img.icons8.com/ios-glyphs/50/20c997/share-rounded.png");
         /* background: url("../assets/download_btn_colour.png"); */
         background-repeat: no-repeat;
         background-size: 25px 25px;
